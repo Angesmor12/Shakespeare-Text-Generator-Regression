@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakespeare Text Generator</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+    <meta name='keywords' content='Shakespeare text generator, Shakespearean AI, BardVerse, Shakespearean writing, AI-generated Shakespeare, Shakespeare text creation, literary AI, text generation, machine learning, natural language processing, NLP, deep learning, language model, artificial intelligence, Shakespearean language model, Shakespearean quotes, text generation with Shakespeare, creative writing AI, literature-based AI, automated writing, Shakespearean prose, text generation from literature, AI for creative writing' />
+    <meta name='author' content='Angelo Smorlesi' />
+    <meta name='description' content='A website that employs advanced AI algorithms to generate text inspired by the works of Shakespeare. The platform utilizes a deep learning model, trained on his literary corpus, to produce text in Shakespearean style and dialogue.' />
+    <meta name='copyright' content='Angelo Smorlesi' />
+    <meta name='robots' content='index,follow,translate' />
+    <link rel="icon" href="./images/shakespeare.ico" type="image/x-icon" />
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/onnxruntime-web.min.js"></script>
+
+</head>
+<body>
+  
+  <main>
+    <div class="signup-container">
+
+      <div class="left-container">
+          <img src="images/shakespeare.png" alt="Puppy">
+        </div>
+
+      <div class="right-container">
+          <h1>Shakespeare Text Generator</h1>
+          <p class="description">This project leverages AI algorithms to generate text inspired by the works of Shakespeare. The model was trained on a dataset of Shakespeare's literary works, enabling it to create prose and dialogue in his iconic style.</p>
+        
+        <div class="set">
+
+          <div class="div-input">
+            <label>Model</label>
+            <select class="algorithm-input">
+              <option value="models/model_dg_dataset.onnx" data-json="vocab_dataset.json" data-size="14423">Base Model</option>
+              <option value="models/model_dg_dataset_sample.onnx" data-json="vocab_dataset_sample.json" data-size="5326">Model trained on a sample</option>
+              <option value="models/model_dg_st.onnx" data-json="vocab_dataset_st.json" data-size="14423">Stemming Model</option>
+              <option value="models/model_dg_l.onnx" data-json="vocab_dataset_l.json" data-size="14423" selected>Lemmatization Model</option>
+            </select>
+          </div>
+
+          <button class="button-generate">Generate</button>
+
+          <div class="loading-image-container hidden"><img class="loading-image" src="./images/loading.gif" alt="loading"></div> 
+
+          <div class="generated-text-container">
+            <p class=" typewriter generated-text hidden">
+            </p> 
+        </div>
+
+        </div>
+
+        <footer>
+          <div class="copy-container"><p class="copyright"> @Angelo Smorlesi</p></div>
+        </footer>
+       
+ 
+      </div>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+
+</body>
+</html>
